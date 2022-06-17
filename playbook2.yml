@@ -1,0 +1,16 @@
+---
+- name: copy for linux
+  hosts: webserver
+  tasks:
+    - name: Copy your file to the webservers
+      copy:
+        src: /home/ec2-user/ansible-review/testfile1
+        dest: /home/ec2-user/testfile
+    
+- name: copy for ubuntu
+  hosts: ubuntuserver
+  tasks:
+    - name: Copy your file to the ubuntuservers
+      copy:
+        src: /home/ec2-user/ansible-review/testfile1
+        dest: /home/ubuntu/testfile
