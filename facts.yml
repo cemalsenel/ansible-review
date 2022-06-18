@@ -1,0 +1,23 @@
+---
+- name: show facts
+  hosts: all
+  tasks:
+    - name: print facts
+      debug: 
+        var: ansible_facts
+  
+    - name: debug deneme
+      shell: "ls -al"
+      register: result
+    
+    - name: display output
+      debug: 
+        var: result
+    
+    - name: disply output 2
+      debug:
+        var: result.stdout_lines
+    
+    - name: display output 3
+      debug:
+        msg: "{{ result.stdout_lines }}"
